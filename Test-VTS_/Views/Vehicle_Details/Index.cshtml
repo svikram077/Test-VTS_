@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Test_VTS_.Models.Vehicle>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Vehicle_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vehicle_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chassis_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Engine_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MFG_Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Load_Capacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MakeOfVehicle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Body_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Organisation_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeviceID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsrID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vehicle_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vehicle_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chassis_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Engine_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MFG_Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Load_Capacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MakeOfVehicle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Body_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Organisation_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeviceID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsrID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
