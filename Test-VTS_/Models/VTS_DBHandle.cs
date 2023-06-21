@@ -11,7 +11,7 @@ namespace Test_VTS_.Models
     public class VTS_DBHandle
     {
         private SqlConnection con;
-        internal object tblVehicle_Details;
+        //internal object tblVehicle_Details;
 
         private void connection()
         {
@@ -147,6 +147,7 @@ namespace Test_VTS_.Models
             cmd.Parameters.AddWithValue("@Organisation_Name", vmodel.Organisation_Name);
             cmd.Parameters.AddWithValue("@DeviceID", vmodel.DeviceID);
             cmd.Parameters.AddWithValue("@UsrID", vmodel.UsrID);
+            cmd.Parameters.AddWithValue("@ID", vmodel.ID);
 
             con.Open();
             int i = cmd.ExecuteNonQuery();
@@ -178,7 +179,7 @@ namespace Test_VTS_.Models
                 vehiclelist.Add(
                     new Vehicle
                     {
-                        ID = Convert.ToInt32(dr["ID"]),
+                        
                         Vehicle_Number = Convert.ToString(dr["Vehicle_Number"]),
                         Vehicle_Type = Convert.ToString(dr["Vehicle_Type"]),
                         Chassis_Number = Convert.ToString(dr["Chassis_Number"]),
@@ -191,7 +192,8 @@ namespace Test_VTS_.Models
                         Body_Type = Convert.ToString(dr["Body_Type"]),
                         Organisation_Name = Convert.ToString(dr["Organisation_Name"]),
                         DeviceID = Convert.ToString(dr["DeviceID"]),
-                        UsrID = Convert.ToString(dr["UsrID"])
+                        UsrID = Convert.ToString(dr["UsrID"]),
+                        ID = Convert.ToInt32(dr["ID"])
 
                     });
             }
@@ -203,6 +205,7 @@ namespace Test_VTS_.Models
         {
             connection();
             SqlCommand cmd = new SqlCommand("UpdateVehicleDetails", con);
+                                             
             cmd.CommandType = CommandType.StoredProcedure;
 
             
@@ -219,7 +222,7 @@ namespace Test_VTS_.Models
             cmd.Parameters.AddWithValue("@Organisation_Name", vModel.Organisation_Name);
             cmd.Parameters.AddWithValue("@DeviceID", vModel.DeviceID);
             cmd.Parameters.AddWithValue("@UsrID", vModel.UsrID);
-            cmd.Parameters.AddWithValue("@ID", vModel.UsrID);
+            cmd.Parameters.AddWithValue("@ID", vModel.ID);
 
             con.Open();
             int i = cmd.ExecuteNonQuery();

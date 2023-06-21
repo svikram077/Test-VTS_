@@ -3,16 +3,54 @@
 @{
     ViewBag.Title = "Index";
 }
+<script type="text/javascript">
 
+
+    var serviceURL = '/vehicle_details/Edit';
+    var idvalue = $("#Id").val();
+    $(#btnsearch).click(function (
+
+        $.ajax({
+            type: "POST",
+            url: serviceURL,
+            data: {
+                id: idvalue ,
+                vModel: model.Vehicle
+            },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: successFunc,
+            error: errorFunc
+        });
+
+    function successFunc(data, status) {
+        alert(data);
+    }
+
+    function errorFunc() {
+        alert('  error Occured');
+    }
+        });
+    ));
+
+    $(document).ready(function () {
+
+
+    }
+        debugger;
+           
+</script>
 <h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 
     Search by : @Html.TextBox("SearchString")
-    <input type="submit" value="Search" />
+    <input id="btnsearch"  type="submit" value="Search"  />
 </p>
-<table class="table">
+<br />
+
+<table  id="tblvehical" class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Vehicle_Number)
@@ -93,7 +131,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @*@Html.ActionLink("Details", "Details", new { id=item.ID }) |*@
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </td>
     </tr>

@@ -16,8 +16,6 @@ namespace Test_VTS_.Controllers
         {
 
 
-           
-
             VTS_DBHandle dbhandle = new VTS_DBHandle();
             ModelState.Clear();
             return View(dbhandle.GetUserDetails());
