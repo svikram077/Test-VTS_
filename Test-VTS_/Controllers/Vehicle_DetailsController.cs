@@ -5,13 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using Test_VTS_.Models;
 
+
 namespace Test_VTS_.Controllers
 {
     public class Vehicle_DetailsController : Controller
     {
+        private const int pageSize = 5;
+        private object product;
+
         // GET: Vehicle_Details
         public ActionResult Index()
         {
+            //int pageNumber = ?? {1});
+            //var model = product.GetList.ToList().ToPagedList(pageNumber, pageSize);
             VTS_DBHandle dbhandle = new VTS_DBHandle();
             ModelState.Clear();
             return View(dbhandle.GetVehicleDetils());

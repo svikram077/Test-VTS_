@@ -3,19 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 using Test_VTS_.Models;
 
 namespace Test_VTS_.Controllers
 {
     public class User_VehicleController : Controller
     {
+        
         // GET: User_Vehicle
         public ActionResult Index()
         {
+
+
+           
+
             VTS_DBHandle dbhandle = new VTS_DBHandle();
             ModelState.Clear();
             return View(dbhandle.GetUserDetails());
         }
+
+        
 
         // GET: User_Vehicle/Details/5
         public ActionResult Details(int id)

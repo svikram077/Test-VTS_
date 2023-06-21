@@ -114,6 +114,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PagingParameterModel.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Models\VTS_DBHandle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

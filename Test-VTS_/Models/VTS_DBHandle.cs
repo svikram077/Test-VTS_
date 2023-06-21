@@ -11,6 +11,8 @@ namespace Test_VTS_.Models
     public class VTS_DBHandle
     {
         private SqlConnection con;
+        internal object tblVehicle_Details;
+
         private void connection()
         {
             string constring = ConfigurationManager.ConnectionStrings["Connection_VTS"].ToString();
@@ -248,5 +250,8 @@ namespace Test_VTS_.Models
                 return false;
         }
 
+        internal class VTS_DB : VTS_DBHandle
+        {
+        }
     }
 }
